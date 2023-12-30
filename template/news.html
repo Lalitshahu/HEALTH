@@ -1,0 +1,246 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
+
+<div class="page-banner overlay-dark bg-image" style="background-image: url(/static/img/person/blog2.jpg)">
+  <div class="banner-section">
+    <div class="container text-center wow fadeInUp">
+      <nav aria-label="Breadcrumb">
+        <!-- <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Blog</li>
+        </ol> -->
+      </nav>
+      <h1 class="font-weight-normal">News</h1>
+    </div>
+    <!-- .container -->
+  </div>
+  <!-- .banner-section -->
+</div>
+<!-- .page-banner -->
+
+
+
+<!-- .banner-home -->
+
+<style>
+  body {
+    background: #f9f9f6;
+  }
+
+  h1 {
+    color: #fff;
+    padding: 10px 0;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(247, 246, 246, 0.2);
+    transition: 0.3s;
+    border: none;
+
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    a {
+      color: initial;
+
+      &:hover {
+        text-decoration: initial;
+      }
+    }
+
+    .text-muted i {
+      margin: 0 10px;
+    }
+  }
+  .card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+.newstrends{
+  padding: 0px 210px 0px 210px;
+}
+</style>
+
+<br />
+<br />
+<div class="news-header">
+  <h3 style="text-align: center; font-weight: 600;">
+    <u style="color:  rgb(23, 80, 186);">
+AMONG THE GLOB    </u>
+  </h3>
+
+<a href="#" style="padding: 0px 0px 0px 0px;">
+  <div class="newstrends">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-12 mt-3">
+              <div class="card">
+                  <div class="card-horizontal">
+                      <div class="img-square-wrapper">
+                          <img class="" src="{% static '/img/person/coronavirus.jpeg' %}" alt="Card image cap">
+                      </div>
+                      <div class="card-body">
+                          <h4 class="card-title" style="font-size: xx-large; font-weight: 600; ">Covid-19 is back!!</h4>
+                          <p class="card-text" style="font-size: x-large;">New coronavirus variant JN.1 is spreading fast.   <br> <p style="font-size: large;"> <br>
+                            The rapid growth of the coronavirus subvariant JN.1 during the holiday season could fuel winter waves of illness in the United States and beyond, public health authorities warn.
+                          <a href="#" style="color: blue;"> <br> Read More... </p> </a>
+                          <br>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</a> <br><br>
+</div>
+
+
+<div class="container">
+  <div class="text-center">
+    <!-- <h1>Bootstrap card tiled layout</h1> -->
+  </div>
+  <div class="container">
+    <div class="card-columns">
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="{% static '/img/person/card 1.jpeg' %}"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600; text-align: center;">Generative AI In Healthcare</h5>
+            <p class="card-text">
+              AI will be instrumental in many of the trends here, but generative AI, in particular, will be particularly impactful over the next 12 months. It will democratize access to other transformative AI applications<a href="#" style="color: blue;"> <br> Read More...
+            </p>
+             
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="{% static '/img/person/card 4.jpeg' %}"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600; text-align: center;">
+              IoT-Powered Virtual Hospitals And Telemedicine 2.0
+            </h5>
+            <p class="card-text">
+              This trend includes both telemedicine and wearable devices connected to the global network known as the Internet of Things (IoT). By using connected devices to remotely monitor patients and provide communication<a href="#" style="color: blue;"> <br> Read More... 
+            </p>
+             
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="{% static '/img/person/card 7.jpg' %}"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600; text-align: center;">Non-communicable Diseases</h5>
+            <p class="card-text">
+              In a first, WHO released its first-ever report on the devastating global impact of high blood pressure: 1 in 3 adults are affected by the condition. The report indicated that approximately 4 out of every 5 people with hypertension are not adequately treated <a href="#" style="color: blue;"> <br> Read More...
+            </p>
+             
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="{% static '/img/person/card 2.jpeg' %}"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title"  style="font-weight: 600; text-align: center;">Climate Change and Health</h5>
+            <p class="card-text">
+              In a historic first, the organizers of COP28 hosted a dedicated health day in response to the climate-related health crisis affecting at least 3.5 billion people – nearly half of the global population. Extreme heat, weather events and air pollution caused millions of deaths in 2023, <a href="#" style="color: blue;"> <br> Read More... 
+            </p>
+             
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="{% static '/img/person/card 5.jpeg' %}" 
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600; text-align: center;">Improving Infrastructure</h5>
+            <p class="card-text">
+              Several breakthroughs in infrastructural reforms have been created under the NHM. The rollout of AB-HWC involves upgrading existing healthcare infrastructure at the primary level.31 Recently, the Fifteenth Finance<a href="#" style="color: blue;"> <br> Read More...
+            </p>
+             
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="{% static '/img/person/card 8.jpg' %}"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600; text-align: center;">
+              Key Avenues of Growth & Diversification            </h5>
+            <p class="card-text">
+              The Indian healthcare industry is expected to reach a valuation of USD 132 billion by 2023 growing at a CAGR of 16-17%. The sector needs to be more cohesive, with many small and medium-sized startups. In such a scenario,<a href="#" style="color: blue;"> <br> Read More...
+              </a>
+            </p>
+             
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="{% static '/img/person/card 3.jpg' %}"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600; text-align: center;">Transformational Diagnostics</h5>
+            <p class="card-text">
+              The Indian transformational diagnostic market is expected to grow at a CAGR of 7.12% till 2025 Transformational diagnostics are pivotal in population health management, as they can <a href="#" style="color: blue;"> <br> Read More...
+              </a>
+            </p>
+             
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="{% static '/img/person/card 6.jpg' %}"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600; text-align: center;">Proliferation of Remote Monitoring tools</h5>
+            <p class="card-text">
+              Mobile technology has become a ubiquitous part of everyday life and is changing the way we offer clinical care and perform clinical research. We have unprecedented access <a href="#" style="color: blue;"> <br> Read More...
+              </a>
+            </p>
+             
+          </div>
+        </a>
+      </div>
+      <div class="card">
+        <a href="#">
+          <img class="card-img-top"
+            src="/static/img/person/card 9.jpg"
+            alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600; text-align: center;">
+              Growing Acceptance of Telemedicine 
+            </h5>
+            <p class="card-text">
+              India has seen a growing acceptance of telemedicine post the pandemic. The telemedicine market in India was almost 830 million U.S. dollars in 2022 and is expected to grow at a CAGR of 24% from  <a href="#" style="color: blue;"> <br> Read More...
+              </a>
+            </p>
+             
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

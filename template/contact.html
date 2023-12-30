@@ -1,0 +1,220 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<div
+  class="page-banner overlay-dark bg-image"
+  style="background-color: aquamarine;"
+>
+  <div class="banner-section">
+    <div class="container text-center wow fadeInUp">
+      <nav aria-label="Breadcrumb">
+        <!-- <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+          </ol> -->
+      </nav>
+      <h1 class="font-weight-normal">Keep Your Self Healthy </h1>
+    </div>
+    <!-- .container -->
+  </div>
+  <!-- .banner-section -->
+</div>
+<!-- .page-banner -->
+<div class="symptomform">
+  <section class="contact-from pt-4">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-7 mx-auto">
+          <div class="form-wrapper">
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Symptoms form</h4>
+              </div>
+            </div>
+            <form _lpchecked="1">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First name"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Last name"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Email"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio1"
+                        value="option1"
+                      />
+                      <label class="form-check-label" for="inlineRadio1"
+                        >Male</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio2"
+                        value="option1"
+                      />
+                      <label class="form-check-label" for="inlineRadio1"
+                        >Female</label
+                      >
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Phone number"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Hight" />
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="date" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-md-12">
+                  <select
+                    name="countries"
+                    class="custom-select"
+                    id="exampleFormControlSelect1"
+                  >
+                    <option>Select country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>France</option>
+                    <option>China</option>
+                    <option>Japan</option>
+                  </select>
+                </div>
+                <div class="col-12 py-2 wow fadeInUp">
+                  <label for="message"></label>
+                  <textarea
+                    id="message"
+                    class="form-control"
+                    rows="8"
+                    placeholder="Enter Message.."
+                  ></textarea>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio1"
+                    name="optradio"
+                    value="option1"
+                    checked
+                  />Option 1
+                  <label class="form-check-label" for="radio1"></label>
+                </div>
+                <div class="form-check">
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    id="radio2"
+                    name="optradio"
+                    value="option2"
+                  />Option 2
+                  <label class="form-check-label" for="radio2"></label>
+                </div>
+                <!-- <div class="form-check">
+                  <input type="radio" class="form-check-input" disabled>Option 3
+                  <label class="form-check-label"></label>
+                </div>
+       -->
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-primary">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  h4 {
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+  }
+  .form-wrapper {
+    background: #fff;
+    border-radius: 5px;
+    padding: 50px;
+  }
+  .form-control,
+  .custom-select {
+    border-radius: 0px;
+    color: #495057;
+    background-color: #f1f1f1;
+    border-color: none;
+  }
+
+  .form-control:focus {
+    color: #495057;
+    background-color: #ffffff;
+    border: 1px solid #b5b6b3;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .btn {
+    background: #3494e6;
+    border: #3494e6;
+    padding: 0.6rem 3rem;
+    font-weight: bold;
+  }
+  .btn:hover,
+  .btn:focus,
+  .btn:active,
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .btn-primary:not(:disabled):not(.disabled):active,
+  .show > .btn-primary.dropdown-toggle {
+    background: #3494e6;
+    border: #3494e6;
+    outline: 0;
+  }
+  
+</style>
+
+<!-- <div class="maps-container wow fadeInUp">
+    <div id="google-maps"></div>
+  </div> -->
+
+{% endblock content %}
