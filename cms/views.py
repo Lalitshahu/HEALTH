@@ -74,3 +74,8 @@ def mental(request):
 
 def lifemanage(request):
     return render(request,"lifemanage.html")
+
+def myprofile(request):
+    return render(request,"myprofile.html")
+
+ 
