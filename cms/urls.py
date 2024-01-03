@@ -19,4 +19,6 @@ urlpatterns = [
     path('hair/',views.hair,name='hair'),
     path('logout',views.logout,name="logout"),
     path('myprofile',views.myprofile,name="myprofile"),
+    path('forgotpass',views.forgot_pass,name="forgotpass"),
+    path('changepass',views.change_pass,name="changepass"),
 ]

@@ -78,4 +78,16 @@ def lifemanage(request):
 def myprofile(request):
     return render(request,"myprofile.html")
 
+def forgot_pass(request):
+    # if request.method == 'POST':
+    #     femail = request.POST.get("femail")
+    #     forgot_data =Register.objects.all().filter(remail=femail).count()
+    #     if femail ==  :
+    #         return redirect('changepass')
+    #     else:
+    return render(request,"forgotpass.html")
+
+def change_pass(request):
+    return render(request,"changepass.html") 
+
  
