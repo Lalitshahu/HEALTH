@@ -24,6 +24,13 @@
  
   <link rel="stylesheet" href="{% static '/css/theme.css' %}"> 
 </head>
+
+<style>
+  body{
+    background-color: #ffffff;
+  }
+</style>
+
 <body>
 
   <!-- Back to top button -->
@@ -65,8 +72,8 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           
           <ul class="navbar-nav ml-auto">
-            {% if request.session.heyyy == True %}
-            <li class="nav-item ">
+            {% if request.session.IS_LOGIN == True %}
+            <li class="nav-item">
              <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li>
             
@@ -89,7 +96,7 @@
             </li>
            
             <li class="nav-item">
-              <a class="btn btn-outline-primary" href="{% url 'logout' %}">Log out</a>
+              <a class="button btn btn-outline-danger" href="{% url 'logout' %}">Log out</a>
             </li>
             {% else %}
             <li class="nav-item">

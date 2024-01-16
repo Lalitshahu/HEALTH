@@ -1,71 +1,92 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
-<section class="vh-100" style="margin: 40px 0px 0px 0px; width: auto;">
-  <div style="text-align: center;">
-    <!-- <p class="lead fw-normal mb-0 me-3"><h1></h1> </p> -->
-  </div>
-    <div class="container h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100 w-100">
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form action="" method="post">
-            {% csrf_token %}
-            <h3 style="color: cornflowerblue;">
-              {% if messages %}
-              {% for message in messages %}
-              {{ message }}
-              {% endfor %}
-              {% endif %}</h3>
-              
+<!-- section -->
 
-            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-              
+<section class="inner_banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="full">
+                    <h3>Forgot Password</h3>
+                </div>
             </div>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example3">Email Address :</label>
-              <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid email address" name="femail" required/>
-              
-            </div>
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-              <!-- <label class="form-label" for="form3Example4">Password :</label>
-              <input type="password" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter password" name="password" required/> -->
-              
-            </div>
-  
-            <div class="d-flex justify-content-between align-items-center">
-              <!-- Checkbox -->
-              <div class="form-check mb-0">
-  
-            <div class="text-center text-lg-start mt-4 pt-2" style="margin-left: 40px;">
-              <button type="submit" class="btn btn-primary btn-lg"
-                style="padding-left: 2rem; padding-right: 2rem;"><a href="{% url 'changepass' %}"></a>Change Password</button>
-            </div>
-  
-          </form>
         </div>
-      </div>
     </div>
-    
-    
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="#!" class="text-white">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-      <!-- Right -->
+</section>
+
+<!-- end section -->
+
+<!-- section -->
+<div class="section layout_padding contact_section" style="background:#f6f6f6;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="full float-right_img">
+                    <img src="{% static '/img/google_play.svg' %}" alt="#">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="contact_form">
+                    <form action="" method="post" id="forgot-pass">
+                        {% csrf_token %}
+                        <fieldset>
+                            <div class="full field" id="email-sec">
+                                <input type="email" id="email" placeholder="Your Email" name="email" />
+                            </div>
+                            <div class="full field" id="otp-sec">
+                                <input type="numbers" placeholder="Enter OTP" name="OTP" />
+                            </div>
+                </div>
+                <div class="full field">
+                    <div class="center"><button type="submit">SUBMIT</button></div>
+                </div>
+                </fieldset>
+                </form>
+                
+            </div>
+        </div>
     </div>
-  </section>
-{% endblock content %}
+</div>
+</div>
+<script>
+    const queryString = window.location.search;
+console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const OTP = urlParams.has('otp')
+    if (OTP){
+        document.getElementById("email-sec").style.display = "none";
+        document.getElementById("otp-sec").style.display = "block";
+    }
+    else{
+        document.getElementById("email-sec").style.display = "block";
+        document.getElementById("otp-sec").style.display = "none";
+    }
+</script>
+{% comment %} <script src="https://code.jquery.com/jquery-3.5.1.js" 
+          integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+            crossorigin="anonymous"></script> 
+  
+    <script type="text/javascript"> 
+    $(document).on('submit','#forgot-pass',function(e){ 
+        e.preventDefault(); 
+        $.ajax({ 
+            type:'POST', 
+            url:'{% url "forgotpass" %}', 
+            data: 
+            { 
+                task:$("#email").val(), 
+                csrfmiddlewaretoken: '{%csrf_token%}'
+
+            }, 
+            success:function(){ 
+                  alert('Saved'); 
+                    } 
+                },
+            error: function(xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.Message);
+              }) 
+        }); 
+    </script>  {% endcomment %}
+{% endblock %}
+<!-- end section -->

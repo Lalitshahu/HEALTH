@@ -6,7 +6,7 @@
       <nav aria-label="Breadcrumb">
         
       </nav>
-      <h1 class="font-weight-normal"> About ILLNESS</h1>
+      <h1 class="font-weight-normal">Our Diseases</h1>
     </div>
     <!-- .container -->
   </div>
@@ -16,9 +16,6 @@
 <!-- .page-banner -->
 
 <style>
-  body {
-    margin-top: 20px;
-  }
 
   /* // Bootstrap resets */
   .card {
@@ -95,12 +92,11 @@
         <img src="{% static '\img\person\eyes flu.jpeg' %}" alt="Card image cap" />
       </div>
       <div class="card-body">
-        <h4 class="card-title" style="font-weight: 600; font-size: xx-large;">EYES</h4>
+        <h4 class="card-title">Eyes</h4>
         <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer. This is a
-          wider card with supporting text below as a natural lead-in to
-          additional content. This content is a little bit longer.
+          Conjunctivitis, commonly called 'pink eye' or 'eye flu,' is an ailment that has periodically re-emerged in various parts of the world, sparking both concern and a myriad of misconceptions. With Mumbai currently experiencing a surge in cases, especially among children, it's become imperative to distinguish fact from fiction.
+
+<!-- Conjunctivitis is not just a singular disease but a symptom of several underlying causes, ranging from viral to bacterial infections, allergies, or exposure to irritants. In light of this ongoing wave, understanding its nuances, risk populations, preventive measures, and debunking prevalent myths is crucial. -->
         </p>
         <a href="{% url 'eyes' %}" class="btn btn-outline-primary">Eyes</a>
       </div>
@@ -111,15 +107,13 @@
           alt="Card image cap" />
       </div>
       <div class="card-body">
-        <h4 class="card-title" style="font-weight: 600; font-size: xx-large;">HEART</h4>
+        <h4 class="card-title">Heart Attack</h4>
         <p class="card-text">
-          This card has supporting text below as a natural lead-in to additional
-          content. This is a wider card with supporting text below as a natural
-          lead-in to additional content. This content is a little bit longer.
-          This card has supporting text below as a natural lead-in to additional
-          content.
+          A heart attack occurs when the flow of blood to the heart is severely reduced or blocked. The blockage is usually due to a buildup of fat, cholesterol and other substances in the heart (coronary) arteries. The fatty, cholesterol-containing deposits are called plaques. The process of plaque buildup is called atherosclerosis.
+
+Sometimes, a plaque can rupture and form a clot that blocks blood flow. A lack of blood flow can damage or destroy part of the heart muscle.
         </p>
-        <a href="{% url 'heart' %}" class="btn btn-outline-primary">Heart</a>
+        <a href="{% url 'heart' %}" class="btn btn-outline-primary">Heart Attack</a>
       </div>
     </div>
     <div class="card">
@@ -128,7 +122,7 @@
           alt="Card image cap" />
       </div>
       <div class="card-body">
-        <h4 class="card-title" style="font-weight: 600; font-size: xx-large;">ASHTHMA</h4>
+        <h4 class="card-title">Asthma</h4>
         <p class="card-text">
           This is a wider card with supporting text below as a natural lead-in
           to additional content. This card has even longer content than the
@@ -145,18 +139,49 @@
           alt="Card image cap" />
       </div>
       <div class="card-body">
-        <h4 class="card-title" style="font-weight: 600; font-size: xx-large;">HAIR FALL</h4>
+        <h4 class="card-title">Hair</h4>
         <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This card has even longer content than the
-          first to show that equal height action. This is a wider card with
-          supporting text below as a natural lead-in to additional content. This
-          content is a little bit longer.
+          the part beneath the skin, called the hair follicle, or, when pulled from the skin, the bulb or root. This organ is located in the dermis and maintains stem cells, which not only re-grow the hair after it falls out, but also are recruited to regrow skin after a wound.[2]
+the hair shaft, which is the hard filamentous part that extends above the skin surface. A cross section of the hair shaft may be divided roughly into three zones.
         </p>
-        <a href="{% url 'hair' %}" class="btn btn-outline-primary">Hair Fall</a>
+        <a href="{% url 'hair' %}" class="btn btn-outline-primary">Hair </a>
       </div>                                                            
     </div>
-  </div>
+    <div class="card">
+      <div class="card-img-body">
+        <img class="card-img" src="{% static '/img/person/diabetesss.jpeg' %}"
+          alt="Card image cap" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Diabetes</h4>
+        <p class="card-text">
+          Diabetes is a chronic (long-lasting) health condition that affects how your body turns food into energy.
+
+Your body breaks down most of the food you eat into sugar (glucose) and releases it into your bloodstream. When your blood sugar goes up, it signals your pancreas to release insulin. Insulin acts like a key to let the blood sugar into your body’s cells for use as energy.
+        </p>
+        <a href="{% url 'asthma' %}" class="btn btn-outline-primary">Diabetes</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img-body">
+        <img class="card-img" src="{% static '/img/person/tuber.jpeg' %}"
+          alt="Card image cap" />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Tuberculosis</h4>
+        <p class="card-text">
+          Tuberculosis (TB) is a serious illness that mainly affects the lungs. The germs that cause tuberculosis are a type of bacteria.
+
+Tuberculosis can spread when a person with the illness coughs, sneezes or sings. This can put tiny droplets with the germs into the air. Another person can then breathe in the droplets, and the germs enter the lungs.
+
+<!-- Tuberculosis spreads easily where people gather in crowds or where people live in crowded conditions. People with HIV/AIDS and other people with weakened immune systems have a higher risk of catching tuberculosis than people with typical immune systems.
+
+Drugs called antibiotics can treat tuberculosis. But some forms of the bacteria no longer respond well to treatments. -->
+        </p>
+        <a href="{% url 'hair' %}" class="btn btn-outline-primary">Tuberculosis</a>
+      </div>                                                            
+    </div>
+      </div>
 </div>
 
 <!-- .banner-home -->

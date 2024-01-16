@@ -869,9 +869,9 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 
-.btn {
-  padding: 8px 24px;
-}
+/* .btn {
+  /* padding: 5px 15px; 
+} */
 
 .breadcrumb {
   background-color: #f8f9fa;

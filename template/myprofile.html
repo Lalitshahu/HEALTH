@@ -2,204 +2,110 @@
 {% load static %} 
 {% block content %}
 
-<div
-  class="page-banner overlay-dark bg-image"
-  style="background-color: aquamarine;"
->
-  <div class="banner-section">
-    <div class="container text-center wow fadeInUp">
-      <nav aria-label="Breadcrumb">
-        <!-- <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Contact</li>
-          </ol> -->
-      </nav>
-      <h1 class="font-weight-normal">Keep Your Self Healthy </h1>
-    </div>
-    <!-- .container -->
-  </div>
-  <!-- .banner-section -->
-</div>
-<!-- .page-banner -->
-<div class="symptomform">
-  <section class="contact-from pt-4">
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col-md-7 mx-auto">
-          <div class="form-wrapper">
-            <div class="row">
-              <div class="col-md-12">
-                <h4>Symptoms form</h4>
-              </div>
-            </div>
-            <form _lpchecked="1">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="First name"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Last name"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Email"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="inlineRadio1"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineRadio1"
-                        >Male</label
-                      >
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="inlineRadio2"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineRadio1"
-                        >Female</label
-                      >
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Phone number"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Hight" />
-                </div>
-  
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="date" class="form-control" />
-                  </div>
-                </div>
-  
-                <div class="col-md-12">
-                  <select
-                    name="countries"
-                    class="custom-select"
-                    id="exampleFormControlSelect1"
-                  >
-                    <option>Select country</option>
-                    <option>India</option>
-                    <option>USA</option>
-                    <option>France</option>
-                    <option>China</option>
-                    <option>Japan</option>
-                  </select>
-                </div>
-                <div class="col-12 py-2 wow fadeInUp">
-                  <label for="message"></label>
-                  <textarea
-                    id="message"
-                    class="form-control"
-                    rows="8"
-                    placeholder="Enter Message.."
-                  ></textarea>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="radio"
-                    class="form-check-input"
-                    id="radio1"
-                    name="optradio"
-                    value="option1"
-                    checked
-                  />Option 1
-                  <label class="form-check-label" for="radio1"></label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="radio"
-                    class="form-check-input"
-                    id="radio2"
-                    name="optradio"
-                    value="option2"
-                  />Option 2
-                  <label class="form-check-label" for="radio2"></label>
-                </div>
-                <!-- <div class="form-check">
-                  <input type="radio" class="form-check-input" disabled>Option 3
-                  <label class="form-check-label"></label>
-                </div>
-       -->
-              </div>
-              <div class="mt-3">
-                <button class="btn btn-primary">Register</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
 <style>
-  h4 {
-    font-weight: bold;
-    margin-bottom: 2.5rem;
-  }
-  .form-wrapper {
-    background: #fff;
-    border-radius: 5px;
-    padding: 50px;
-  }
-  .form-control,
-  .custom-select {
-    border-radius: 0px;
-    color: #495057;
-    background-color: #f1f1f1;
-    border-color: none;
-  }
 
-  .form-control:focus {
-    color: #495057;
-    background-color: #ffffff;
-    border: 1px solid #b5b6b3;
-    outline: 0;
-    box-shadow: none;
-  }
-      
+.form-control:focus {
+  box-shadow: none;
+  border-color: #BA68C8;
+}
+
+.profile-button {
+  background: #BA68C8;
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #682773;
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer;
+}
 </style>
 
-<!-- <div class="maps-container wow fadeInUp">
-    <div id="google-maps"></div>
-  </div> -->
+<div class="container rounded bg-white mt-5">
+  <div class="row">
+      <div class="col-md-4 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="130"></div>
+      </div>
+      <div class="col-md-8">
+        <h4>
+          {% if messages %}
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+          {% endif %}
+        </h4>
+          <div class="p-3 py-5">
+            <form action="" method="post">
+              {% csrf_token %}  
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
+                      <h6>My Profile</h6>
+                  </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-6"><input type="text" class="form-control" placeholder="Edit Your Name" name="cname" value="{{ profiledata.rname }}"></div>
+                  <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Age" name="usage" required></div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Email"  name="cemail" value="{{ profiledata.remail }}" disabled></div>
+                  <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Phone Number" name="usmobile" required></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <!-- <select name="" id="" class="form-control">
+                      <option value="">Select Your Disease</option>
+                      <option value="">Ashtma</option>
+                      <option value="">Anemia</option>
+                      <option value="">Blood-Pressure</option>
+                      <option value="">Cough</option>
+                      <option value="">Cholera</option>
+                      <option value="">Cancer</option>
+                      <option value="">Covid-19</option>
+                      <option value="">Chiken-Pox</option>
+                      <option value="">Denguge</option>
+                      <option value="">Dandruff</option>
+                      <option value="">Diabetes</option>
+                      <option value="">Eye Flu</option>
+                      <option value="">Ear Troubles</option>
+                      <option value="">Flu</option>
+                      <option value="">Fever</option>
+                      <option value="">Hair-Diseases</option>
+                      <option value="">HIV</option>
+                      <option value="">Infaction</option>
+                      <option value="">Itch</option>
+                      <option value="">Jaundice</option>
+                      <option value="">Lung-Diseases</option>
+                      <option value="">Nightmares</option>
+                      <option value="">Plague</option>
+                      <option value="">Pnuemania</option>
+                      <option value="">Rabies</option>
+                      <option value="">Skin-Diseases</option>
+                      <option value="">Tongue-Diseases</option>
+                      <option value="">Tobacco Habit</option>
+                      <option value="">Weakness</option>
+                    </select> -->
+                  </div>
+                </div>
+                <div class="mt-5 text-right"><button class="button btn btn-outline-primary" type="submit">Save Profile</button></div>
+              </div>
+            </form>
+      </div>
+  </div>
+</div>
+
 
 {% endblock content %}

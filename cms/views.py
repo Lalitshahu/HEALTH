@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from cms.models import Register,Login
+from cms.models import *
 from django.contrib import messages
+from django.core.mail import EmailMessage
+import random
+from django.views.decorators.csrf import csrf_exempt
 
 def index(request):
     return render(request,"index.html")
@@ -19,7 +22,7 @@ def contact(request):
     return render(request,"contact.html")
 
 def logout(request):
-    del request.session["heyyy"]
+    del request.session["IS_LOGIN"]
     messages.success(request,"Log Out Successfully.")
     return redirect('login')
     
@@ -30,10 +33,14 @@ def register(request):
         mail=request.POST.get("email")
         passw=request.POST.get("password")
         repass=request.POST.get("rpass")
-        formdata =Register(rname=name,remail=mail,rpass=passw,rrpass=repass)
-        formdata.save()
-        messages.success(request,"Thank You For Registration. Now Login!")
-        return redirect('login')
+        if passw == repass:
+            formdata =Register(rname=name,remail=mail,rpass=passw,rrpass=repass)
+            formdata.save()
+            messages.success(request,"Thank You For Registration. Now Login!")
+            return redirect('login')
+        else:
+            messages.error(request,"Password must be same.")
+            return redirect('register')
        
     return render(request,"register.html")
 
@@ -43,7 +50,8 @@ def login(request):
         epassw =request.POST.get("password")
         logindata =Register.objects.all().filter(remail=gmail,rpass=epassw).count()
         if logindata > 0:
-            request.session["heyyy"] = True
+            request.session["IS_LOGIN"] = True
+            request.session['USER_MAIL'] = gmail
             return redirect('index')
         else:
             messages.success(request,"wrong gmail and password")
@@ -76,16 +84,45 @@ def lifemanage(request):
     return render(request,"lifemanage.html")
 
 def myprofile(request):
-    return render(request,"myprofile.html")
+    profileuser = Register.objects.get(remail = request.session['USER_MAIL'])
+    if request.method == 'POST':
+        profileuser = Register.objects.get(remail = request.session['USER_MAIL'])
+        uname = request.POST.get("uname")
+        uemail = request.POST.get("uemail")
+        uage=request.POST.get("usage")
+        umobile=request.POST.get("usmobile")
+        profiledt = Mprofile(userage=uage,usernumber=umobile)
+        profileuser.rname = uname
+        profileuser.remail = uemail
+        # profileuser.save()
+        profiledt.save()
+        messages.success(request,'Data Successfully Updated.')
+        return redirect('myprofile')
+    
+    return render(request,"myprofile.html",{'profiledata' : profileuser})
 
+@csrf_exempt
 def forgot_pass(request):
-    # if request.method == 'POST':
-    #     femail = request.POST.get("femail")
-    #     forgot_data =Register.objects.all().filter(remail=femail).count()
-    #     if femail ==  :
-    #         return redirect('changepass')
-    #     else:
-    return render(request,"forgotpass.html")
+    changepass=redirect("/forgotpass?otp")# To get user on otp page.
+    if request.method == 'POST':    
+        if not request.POST['OTP']:
+            email=request.POST.get('email')
+            print(email)
+            SendEmail(email,request)
+            return redirect('/forgotpass?otp')
+        else:
+            otp = request.POST.get("OTP")
+            if otp == request.session["otp"]:#Compares otp got from user and stored in the cookie.
+                return redirect("changepass")
+            else:
+                return HttpResponse("<h1>Incorrect OTP.</h1>") #Msg
+    return render(request,"forgotpass.html")            
+
+def SendEmail(email,request):
+    otp = str(random.randint(1000, 9999))
+    email = EmailMessage('OTP', otp ,to=[email])
+    email.send()
+    request.session["otp"]=otp
 
 def change_pass(request):
     return render(request,"changepass.html") 

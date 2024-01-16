@@ -127,3 +127,11 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True #tls=Transport Layer Security ,it supports new algorithms for security and encryption purpose.recently this is most commonly in use.
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'lalitshahu633@gmail.com'
+EMAIL_HOST_PASSWORD = 'cgvgtxnfqhwvpldr'#space between password is not allowed here.
+EMAIL_PORT = 587
+EMAIL_USE_SSL=False #ssl=Secure Sockets Layer,it uses older algorithms to pro
