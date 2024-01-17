@@ -1,53 +1,52 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 
-<!-- section -->
-
-<section class="inner_banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="full">
-                    <h3>Forgot Password</h3>
-                </div>
+<section class="vh-100" style="margin: 100px 0px 0px 0px; width: auto;">
+  <div style="text-align: center;">
+    <!-- <p class="lead fw-normal mb-0 me-3"><h1></h1> </p> -->
+  </div>
+    <div class="container h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100 w-100">
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              
             </div>
+            <!-- Email input -->
+            <div class="full field form-outline mb-4" id="email-sec">
+              <label class="form-label" for="form3Example3">Enter Your E-mail :</label>
+              <input type="email" id="email" class="form-control form-control-lg"
+                placeholder="Enter a valid email" name="email">
+              
+            </div>
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <div class="full field form-outline mb-4" id="otp-sec">
+                <label class="form-label" for="form3Example3">Enter Your OTP :</label>
+                <input type="numbers" class="form-control form-control-lg"
+                  placeholder="Enter OTP" name="OTP">
+              
+            </div>
+  
+            <div class="align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+  
+                <div class="text-center text-lg-start mt-1 pt-2 full field">
+                    <button type="submit" class="button btn btn-outline-info"
+                      style="padding-left: 2rem; padding-right: 2rem; margin-right: 30px;">SUBMIT</button>
+                </div>
+          </form>
         </div>
+      </div>
     </div>
-</section>
+  </section>
+
 
 <!-- end section -->
 
-<!-- section -->
-<div class="section layout_padding contact_section" style="background:#f6f6f6;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12">
-                <div class="full float-right_img">
-                    <img src="{% static '/img/google_play.svg' %}" alt="#">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="contact_form">
-                    <form action="" method="post" id="forgot-pass">
-                        {% csrf_token %}
-                        <fieldset>
-                            <div class="full field" id="email-sec">
-                                <input type="email" id="email" placeholder="Your Email" name="email" />
-                            </div>
-                            <div class="full field" id="otp-sec">
-                                <input type="numbers" placeholder="Enter OTP" name="OTP" />
-                            </div>
-                </div>
-                <div class="full field">
-                    <div class="center"><button type="submit">SUBMIT</button></div>
-                </div>
-                </fieldset>
-                </form>
-                
-            </div>
-        </div>
-    </div>
-</div>
-</div>
 <script>
     const queryString = window.location.search;
 console.log(queryString);

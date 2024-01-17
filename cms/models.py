@@ -19,7 +19,7 @@ class Email(models.Model):
         return f"{self.Email}"
     
 class Mprofile(models.Model):
-    userage = models.IntegerField(max_length=20,null=True)
-    usernumber = models.IntegerField(max_length=20,null=True)
+    userage = models.IntegerField(null=True)
+    usernumber = models.IntegerField(null=True)
 
 # Create your models here.

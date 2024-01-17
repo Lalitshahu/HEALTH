@@ -11,13 +11,13 @@
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form action="" method="post">
             {% csrf_token %}
-            <h3 style="color: cornflowerblue;">
+
+            <p style="color: rgb(255, 1, 1); font-size: large;">
               {% if messages %}
               {% for message in messages %}
               {{ message }}
               {% endfor %}
-              {% endif %}</h3>
-              
+              {% endif %}</p>
 
             <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
               
@@ -25,18 +25,18 @@
             <!-- Email input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="form3Example3">Enter New Password :</label>
-              <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid email address" name="fpassword" required/>
+              <input type="password" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter Your Password" name="passwd" required/>
               
             </div>
             <!-- Password input -->
             <div class="form-outline mb-3">
               <div class="form-outline mb-4">
-                <label class="form-label" for="form3Example3">Confirm New Password :</label>
-                <input type="email" id="form3Example3" class="form-control form-control-lg"
-                  placeholder="Enter a valid email address" name="frpassword" required/>
+                <label class="form-label" for="form3Example3">Re-enter New Password :</label>
+                <input type="password" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Confirm Your Password" name="repasswd" required/>
               
-            </div>
+              </div>
   
             <div class="d-flex justify-content-between align-items-center">
               <!-- Checkbox -->
@@ -44,29 +44,11 @@
   
             <div class="text-center text-lg-start mt-4 pt-2" style="margin-left: 40px;">
               <button type="submit" class="btn btn-primary btn-lg"
-                style="padding-left: 2rem; padding-right: 2rem;"><a href="{% url 'changepass' %}" style="text-decoration: none; color: rgb(255, 255, 255);">Change Password</a></button>
+                style="padding-left: 2rem; padding-right: 2rem;">Change Password</button>
             </div>
-  
           </form>
         </div>
       </div>
-    </div>
-    
-    
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="#!" class="text-white">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-      <!-- Right -->
     </div>
   </section>
 {% endblock content %}

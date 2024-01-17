@@ -86,7 +86,7 @@ def lifemanage(request):
 def myprofile(request):
     profileuser = Register.objects.get(remail = request.session['USER_MAIL'])
     if request.method == 'POST':
-        profileuser = Register.objects.get(remail = request.session['USER_MAIL'])
+        profileuser = Register.objects.get()
         uname = request.POST.get("uname")
         uemail = request.POST.get("uemail")
         uage=request.POST.get("usage")
@@ -94,7 +94,6 @@ def myprofile(request):
         profiledt = Mprofile(userage=uage,usernumber=umobile)
         profileuser.rname = uname
         profileuser.remail = uemail
-        # profileuser.save()
         profiledt.save()
         messages.success(request,'Data Successfully Updated.')
         return redirect('myprofile')
@@ -103,6 +102,11 @@ def myprofile(request):
 
 @csrf_exempt
 def forgot_pass(request):
+    if request.method == 'POST':
+        fremail = request.POST.get("email")
+        forgptpassdt =Register.objects.all().filter(remail=fremail).count()
+        if forgptpassdt > 0:
+            request.session['FORGOT_PASS'] = fremail
     changepass=redirect("/forgotpass?otp")# To get user on otp page.
     if request.method == 'POST':    
         if not request.POST['OTP']:
@@ -125,6 +129,26 @@ def SendEmail(email,request):
     request.session["otp"]=otp
 
 def change_pass(request):
+    forgptpassdata = Register.objects.get(remail = request.session['FORGOT_PASS'])
+    if request.method == 'POST':
+        forgptpassdata = Register.objects.get(remail = request.session['FORGOT_PASS'])
+        passwd = request.POST.get("passwd")
+        repasswd = request.POST.get("repasswd")
+        forgptpassdata.rpass = passwd
+        forgptpassdata.rrpass = repasswd
+        forgptpassdata.save()
+        messages.success(request,'Your Password Is Successfully Updated.')
+        return redirect("changepass")
     return render(request,"changepass.html") 
+
+
+#  if request.method == 'POST':
+#         fgemail = request.POST.get("email")
+#         forgotdt = Register.objects.all().filter(remail=fgemail).count()
+#         if forgotdt > 0:
+
+# else:
+#             messages.success(request,"Register Yourself First...")
+#             return redirect('register')
 
  
