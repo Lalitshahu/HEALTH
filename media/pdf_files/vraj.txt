@@ -1,0 +1,42 @@
+					COLOR BLIND SURVERY
+
+  DATE :_______
+	
+
+
+  Q1. Youy Age :______
+	
+  Q2. Gender:_______
+
+  Q3. Have you ever had problems related to color in using the products that you buy?
+
+	YES.__     NO.__
+
+  Q4. Do you ever have problems in matching colors in the products that you use or buy?
+
+	YES.__     NO.__
+
+  Q5. Have you ever had a color-related problem while shopping?
+
+	YES.__     NO.__
+
+  Q6. Do you have problems with warnings or special product information which is highlighted in color?
+
+	YES.__     NO.__
+
+  Q7. Is your ability to see color affected by the lighting used in stores?
+
+	YES.__     NO.__
+
+  Q8. Store displays which use many colors are confusing to me?
+
+	YES.__     NO.__
+
+  Q9. I need to have a family member or friend help me to choose my clothing when I get dressed?
+
+	YES.__     NO.__
+
+  Q10. I am concerned that I will buy something which is a different color from what I need.?
+
+	YES.__     NO.__
+  

@@ -22,4 +22,12 @@ class Mprofile(models.Model):
     userage = models.IntegerField(null=True)
     usernumber = models.IntegerField(null=True)
 
+class Symptom(models.Model):
+    userheight = models.IntegerField(null=True)
+    userweight = models.IntegerField(null=True)
+    userchat = models.TextField(null=True, blank=True)
+    userfile = models.FileField(upload_to='static/pdf', null=True, blank=True)
+
+
+
 # Create your models here.

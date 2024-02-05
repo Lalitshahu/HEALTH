@@ -19,5 +19,11 @@ class Mprofilehead(admin.ModelAdmin):
 
 admin.site.register(Mprofile,Mprofilehead)
 
+class Symptomshead(admin.ModelAdmin):
+    
+    list_display=('userheight','userweight','userchat','userfile')
+
+admin.site.register(Symptom,Symptomshead) 
+
 admin.site.register(Email)
 # Register your models here.

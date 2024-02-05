@@ -1,10 +1,13 @@
 from django.urls import path
 from cms import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('',views.index,name='index'),
     path('about/',views.about,name='about'),
-    path('contact/',views.contact,name='contact'),
+    path('symptoms/',views.symptoms,name='symptoms'),
+   
     path('news/',views.news,name='news'),
     path('disease/',views.disease,name='disease'),
     path('login/',views.login,name='login'),
@@ -18,7 +21,10 @@ urlpatterns = [
     path('lifemanage/',views.lifemanage,name='lifemanage'),
     path('hair/',views.hair,name='hair'),
     path('logout',views.logout,name="logout"),
-    path('myprofile',views.myprofile,name="myprofile"),
-    path('forgotpass',views.forgot_pass,name="forgotpass"),
-    path('changepass',views.change_pass,name="changepass"),
+    path('myprofile/',views.myprofile,name="myprofile"),
+    path('forgotpass/',views.forgot_pass,name="forgotpass"),
+    path('changepass/',views.change_pass,name="changepass"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

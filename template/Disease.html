@@ -1,5 +1,12 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
+<div class="search-container">
+  <div class="search-box">
+    <input type="text" class="search-input" placeholder="Search...">
+    <button class="search-button"> Search<i class="fas fa-search"></i></button>
+  </div>
+</div>
+
 <div class="page-banner overlay-dark bg-image" style="background-image: url(/static/img/disease\ 1.jpg)">
   <div class="banner-section">
     <div class="container text-center wow fadeInUp">
@@ -83,7 +90,43 @@
       }
     }
   }
+    .search-container {
+      max-width: 400px;
+      margin: 10px;
+    }
+    .search-box {
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      /* transition: width 0.4s ease-in-out; */
+    }
+    /* .search-input:focus {
+      width: 300px;
+    } */
+    .search-button {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      width: 70px;
+      height: 30px;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in-out;
+    }
+    .search-button:hover {
+      background-color: #002aff;
+    }
 </style>
+
 
 <div class="container">
   <div class="card-group vgr-cards">

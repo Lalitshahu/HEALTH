@@ -1,0 +1,131 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<div class="page-banner overlay-dark bg-image" style="background-color: aquamarine">
+  <div class="banner-section">
+    <div class="container text-center wow fadeInUp">
+      <nav aria-label="Breadcrumb">
+        <!-- <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+          </ol> -->
+      </nav>
+      <h1 class="font-weight-normal">Keep Your Self Healthy</h1>
+    </div>
+    <!-- .container -->
+  </div>
+  <!-- .banner-section -->
+</div>
+<!-- .page-banner -->
+<div class="symptomform">
+  <section class="contact-from pt-4">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-7 mx-auto">
+          <div class="form-wrapper">
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Symptoms Form</h4>
+              </div>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" name="sname"
+                      value="{{ symptomdata.rname }}" disabled/>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" name="semail"
+                      value="{{ symptomdata.remail }}" disabled/>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <input type="number" class="form-control" placeholder="Height" name="sheight"/>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="number" class="form-control" placeholder="Weight" name="sweight"/>
+                  </div>
+                </div>
+
+                <!-- <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="smale" id="inlineRadio1"
+                        value="" />
+                      <label class="form-check-label" for="inlineRadio1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="sfemale" id="inlineRadio2"
+                        value="option1" />
+                      <label class="form-check-label" for="inlineRadio1">Female</label>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    Choose PDF File :
+                    <input type="file" class="form-control" name="sfile" />
+                  </div>
+                </div>
+
+                <div class="col-12 py-2 wow fadeInUp">
+                  <label for="message"></label>
+                  <textarea id="message" class="form-control" rows="8" placeholder="Enter Message.."
+                    name="sdesc"></textarea>
+                </div>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-outline-primary" type="submit">
+                  SUBMIT
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  h4 {
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+  }
+
+  .form-wrapper {
+    background: #fff;
+    border-radius: 5px;
+    padding: 50px;
+  }
+
+  .form-control,
+  .custom-select {
+    border-radius: 0px;
+    color: #495057;
+    background-color: #f1f1f1;
+    border-color: none;
+  }
+
+  .form-control:focus {
+    color: #495057;
+    background-color: #ffffff;
+    border: 1px solid #b5b6b3;
+    outline: 0;
+    box-shadow: none;
+  }
+</style>
+
+<!-- <div class="maps-container wow fadeInUp">
+    <div id="google-maps"></div>
+  </div> -->
+
+{% endblock content %}
