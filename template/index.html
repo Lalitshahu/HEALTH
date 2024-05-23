@@ -4,7 +4,7 @@
 
 
 
-<div class="page-hero bg-image overlay-dark" style="background-image: url(/static/img/person/banner\ 2.jpg)">
+<div class="page-hero bg-image overlay-dark" style="background-image: url(/static/img/person/health\ banner.jpg)">
   <div class="hero-section">
     <div class="container text-center wow zoomIn">
       <span class="subhead">Let's make your life happier</span>
@@ -12,7 +12,7 @@
       <!-- <a href="#" class="btn btn-primary">Let's Consult</a> -->
     </div>
   </div>
-</div>  
+</div>
 
 <!-- .page-section -->
 
@@ -21,16 +21,21 @@
     <div class="row align-items-center">
       <div class="col-lg-6 py-3 wow fadeInUp">
         <h1>
-          Welcome to Your Health <br/>
+          Welcome to Your Health <br />
           Center
         </h1>
         <p class="text-grey mb-4">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-          et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo
-          labore eaque porro consequatur ex aspernatur. Explicabo, excepturi
-          accusantium! Placeat voluptates esse ut optio facilis!
+          Health information encompasses a wide range of knowledge related to the maintenance and improvement of one's
+          well-being. This includes information about diseases, medical conditions, preventive measures, treatments,
+          medications, lifestyle choices, nutrition, exercise, mental health, and more. It can be disseminated through
+          various channels such as healthcare professionals, online resources, books, articles, and public health
+          campaigns. <br>
+
+          Access to accurate and reliable health information is crucial for individuals to make informed decisions about
+          their health. However, in today's digital age, navigating the vast amount of health information available can
+          be overwhelming and sometimes misleading. It's important to critically evaluate the sources of health
+          information and rely on reputable sources such as government health agencies, medical organizations, and
+          peer-reviewed research publications
         </p>
         <!-- <a href="about.html" class="btn btn-primary">Learn More</a> -->
       </div>
@@ -49,34 +54,33 @@
 <div class="page-section">
   <div class="container">
     <h1 class="text-center mb-5 wow fadeInUp">Our Health Care</h1>
-
     <div class="shell">
       <div class="container">
         <div class="row">
           <div class="col-md-3">
             <div class="wsk-cp-product">
               <div class="wsk-cp-img">
-                <img src="{% static '\img\person\diet-weight-management.webp' %}" alt="Product"
-                  class="img-responsive" />
+                <a href="{% url 'diet' %}">
+                  <img src="{% static '\img\person\diet-weight-management.webp' %}" alt="Product"
+                    class="img-responsive" />
+                </a>
               </div>
               <div class="wsk-cp-text">
                 <div class="category">
-                  <span>Diet</span>
-                  <span> <a href="{% url 'diet' %}" >Diet</a></span>
+                  <!-- <span>Diet</span> -->
+                  <span> <a href="{% url 'diet' %}">Diet</a></span>
                 </div>
-
-
               </div>
             </div>
           </div>
           <div class="col-md-3">
             <div class="wsk-cp-product">
-              <div class="wsk-cp-img"><img src="{% static '\img\person\fitness.webp' %}"
-                  alt="Product" class="img-responsive" /></div>
+              <div class="wsk-cp-img"><a href="{% url 'fitness' %}"><img src="{% static '\img\person\fitness.webp' %}"
+                    alt="Product" class="img-responsive" /></a></div>
               <div class="wsk-cp-text">
                 <div class="category">
                   <!-- <span>Fitness</span> -->
-                 <span> <a href="{% url 'fitness' %}" >Fitness</a></span>
+                  <span> <a href="{% url 'fitness' %}">Fitness</a></span>
                 </div>
 
               </div>
@@ -84,11 +88,12 @@
           </div>
           <div class="col-md-3">
             <div class="wsk-cp-product">
-              <div class="wsk-cp-img"><img src="{% static '\img\person\mental-health.webp' %}"
-                  alt="Product" class="img-responsive" /></div>
+              <div class="wsk-cp-img"><a href="{% url 'mental' %}"><img
+                    src="{% static '\img\person\mental-health.webp' %}" alt="Product" class="img-responsive" /></a>
+              </div>
               <div class="wsk-cp-text">
                 <div class="category">
-                  <span>Mental</span>
+                  <!-- <span>Mental</span> -->
                   <span> <a href="{% url 'mental' %}">Mental</a></span>
                 </div>
 
@@ -97,19 +102,18 @@
           </div>
           <div class="col-md-3">
             <div class="wsk-cp-product">
-              <div class="wsk-cp-img"><img
-                  src="{% static '\img\person\news 1.jpg' %} " height="400%" alt="Product"
-                  class="img-responsive" /></div>
+              <div class="wsk-cp-img"><a href="{% url 'lifemanage' %}"><img src="{% static '\img\person\ml 2.avif' %} "
+                    height="295px" alt="Product" class="img-responsive" /></a></div>
               <div class="wsk-cp-text">
                 <div class="category">
-                  <span>Life Manage</span>
-                  <span> <a href="{% url 'lifemanage' %}" >Life Manage</a></span>
+                  <!-- <span>Life Manage</span> -->
+                  <span> <a href="{% url 'lifemanage' %}">LifeManage</a></span>
                 </div>
 
               </div>
             </div>
           </div>
-          
+
         </div>
 
       </div>
@@ -132,7 +136,7 @@
   }
 
   .shell {
-    padding: 80px 0;
+    padding: 25px 0;
   }
 
   .wsk-cp-product {

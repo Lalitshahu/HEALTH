@@ -2,28 +2,23 @@ from django.contrib import admin
 
 from cms.models import *
 
-class Registerhead(admin.ModelAdmin):
-    list_display=('rname','remail','rpass','rrpass')
+class userhead(admin.ModelAdmin):
+    list_display=('rname','remail','rpass','rrpass','rage','rnumber')
 
-admin.site.register(Register,Registerhead)
+admin.site.register(User,userhead)
 
-
-class Loginhead(admin.ModelAdmin):
-    list_display=('lmail','lpasswd')
-
-admin.site.register(Login,Loginhead)
-
-
-class Mprofilehead(admin.ModelAdmin):
-    list_display=('userage','usernumber')
-
-admin.site.register(Mprofile,Mprofilehead)
 
 class Symptomshead(admin.ModelAdmin):
     
-    list_display=('userheight','userweight','userchat','userfile')
+    list_display=('userheight','userweight','userchat','userfile', 'symptomurl', 'symtuseremail')
 
 admin.site.register(Symptom,Symptomshead) 
+
+class Adminhead(admin.ModelAdmin):
+
+    list_display=('adname', 'ademail', 'adpass', 'adrepass')
+
+admin.site.register(Admin,Adminhead)
 
 admin.site.register(Email)
 # Register your models here.

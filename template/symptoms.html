@@ -1,20 +1,22 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<div class="page-banner overlay-dark bg-image" style="background-color: aquamarine">
+<div class="page-banner overlay-dark bg-image" style="background-image: url(/static/img/disease\ 1.jpg)">
   <div class="banner-section">
     <div class="container text-center wow fadeInUp">
       <nav aria-label="Breadcrumb">
         <!-- <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0 mb-2">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Contact</li>
-          </ol> -->
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About</li>
+        </ol> -->
       </nav>
-      <h1 class="font-weight-normal">Keep Your Self Healthy</h1>
+      <!-- <h1 class="font-weight-normal"></h1> -->
     </div>
     <!-- .container -->
   </div>
   <!-- .banner-section -->
 </div>
+<!-- .page-banner -->
+
 <!-- .page-banner -->
 <div class="symptomform">
   <section class="contact-from pt-4">
@@ -22,52 +24,42 @@
       <div class="row mt-5">
         <div class="col-md-7 mx-auto">
           <div class="form-wrapper">
+            <h4>
+              {% if messages %} {% for message in messages %} {{ message }}
+              {% endfor %} {% endif %}
+            </h4>
             <div class="row">
               <div class="col-md-12">
                 <h4>Symptoms Form</h4>
               </div>
             </div>
-            <form method="post" enctype="multipart/form-data">
+            <form id="symptomForm" method="post" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Name" name="sname"
-                      value="{{ symptomdata.rname }}" disabled/>
+                      value="{{ symptomdata.rname }}" disabled />
                   </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-group">
                     <input type="email" class="form-control" placeholder="Email" name="semail"
-                      value="{{ symptomdata.remail }}" disabled/>
+                      value="{{ symptomdata.remail }}" disabled />
                   </div>
                 </div>
 
                 <div class="col-md-6">
-                  <input type="number" class="form-control" placeholder="Height" name="sheight"/>
+                  <input type="text" class="form-control" placeholder="Height" name="sheight" />
                 </div>
+
 
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Weight" name="sweight"/>
+                    <input type="text" class="form-control" placeholder="Weight" name="sweight" />
                   </div>
                 </div>
-
-                <!-- <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="smale" id="inlineRadio1"
-                        value="" />
-                      <label class="form-check-label" for="inlineRadio1">Male</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="sfemale" id="inlineRadio2"
-                        value="option1" />
-                      <label class="form-check-label" for="inlineRadio1">Female</label>
-                    </div>
-                  </div>
-                </div> -->
 
                 <div class="col-md-6">
                   <div class="form-group">
@@ -76,15 +68,25 @@
                   </div>
                 </div>
 
-                <div class="col-12 py-2 wow fadeInUp">
-                  <label for="message"></label>
-                  <textarea id="message" class="form-control" rows="8" placeholder="Enter Message.."
-                    name="sdesc"></textarea>
-                </div>
+                  <div class="col-12 py-2 wow fadeInUp">
+                    <label for="trcode"></label>
+                    <textarea id="trcode" class="form-control" rows="8" placeholder="Enter Message.."
+                      name="sdesc"></textarea>
+                  </div>
               </div>
+              
+              <div class="col-md-6">
+                {% for sd in sytmaddata %} 
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="" value="{{ sd.symptomurl }}" disabled />
+                </div>
+                {% endfor %}
+              </div>
+              
+
               <div class="mt-3">
-                <button class="btn btn-outline-primary" type="submit">
-                  SUBMIT
+                <button class="button btn btn-outline-primary" type="submit">
+                  Submit
                 </button>
               </div>
             </form>
@@ -127,5 +129,62 @@
 <!-- <div class="maps-container wow fadeInUp">
     <div id="google-maps"></div>
   </div> -->
+
+<!-- <script>
+  function submitAndRedirect() {
+    var keyword = document.getElementById("trcode").value.toLowerCase().trim();
+
+    if (keyword === "eyes") {
+      window.location.href =
+        "https://www.healthline.com/health/eye-health/home-remedies-for-eye-infection";
+    } else if (keyword === "attack") {
+      window.location.href =
+        "https://www.healthline.com/health/home-remedies-for-heart-pain";
+    } else if (keyword === "asthma") {
+      window.location.href =
+        "https://www.healthline.com/health/severe-asthma/natural-remedies";
+    } else if (keyword === "hair") {
+      window.location.href =
+        "https://www.healthline.com/health/regrow-hair-naturally";
+    } else if (keyword === "diabetes") {
+      window.location.href =
+        "https://www.webmd.com/diabetes/natural-remedies-type-2-diabetes";
+    } else if (keyword === "tuberculosis") {
+      window.location.href =
+        "https://www.thehealthsite.com/home-remedies/tuberculosis-here-are-some-home-remedies-to-accelerate-the-healing-process-791608/";
+    } else if (keyword === "cardio") {
+      window.location.href =
+        "https://newsnetwork.mayoclinic.org/discussion/home-remedies-lifestyle-changes-can-help-your-heart-health/";
+    } else if (keyword === "cancer") {
+      window.location.href =
+        "https://www.patientpower.info/navigating-cancer/natural-remedies-cancer";
+    } else if (keyword === "neurological") {
+      window.location.href =
+        "https://www.healthline.com/health/peripheral-neuropathy-natural-treatments";
+    } else if (keyword === "gas") {
+      window.location.href =
+        "https://www.healthline.com/health/immediate-relief-for-trapped-gas-home-remedies-and-prevention-tips";
+    } else if (keyword === "kidney") {
+      window.location.href =
+        "https://www.healthline.com/health/kidney-infection-home-remedies";
+    } else if (keyword === "liver") {
+      window.location.href =
+        "https://www.healthline.com/health/home-remedies-for-fatty-liver";
+    } else if (keyword === "chronic") {
+      window.location.href =
+        "https://www.healthline.com/health/copd/home-remedies";
+    } else if (keyword === "skin") {
+      window.location.href =
+        "https://healthline.com/health/beauty-skin-care/home-remedies-for-glowing-skin";
+    } else if (keyword === "flu") {
+      window.location.href = "https://www.cdc.gov/flu/symptoms/symptoms.htm";
+    } else if (keyword === "zikavirus") {
+      window.location.href = "https://www.ecdc.europa.eu/en/zika-virus-disease";
+    } else {
+      alert("Invalid keyword entered. Please enter a valid keyword.");
+    }
+    return false;
+  }
+</script> -->
 
 {% endblock content %}

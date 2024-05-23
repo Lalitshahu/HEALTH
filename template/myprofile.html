@@ -1,72 +1,75 @@
-{% extends "base.html" %} 
-{% load static %} 
+{% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <style>
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8;
+  }
 
-.form-control:focus {
-  box-shadow: none;
-  border-color: #BA68C8;
-}
+  .profile-button {
+    background: #BA68C8;
+    box-shadow: none;
+    border: none;
+  }
 
-.profile-button {
-  background: #BA68C8;
-  box-shadow: none;
-  border: none;
-}
+  .profile-button:hover {
+    background: #682773;
+  }
 
-.profile-button:hover {
-  background: #682773;
-}
+  .profile-button:focus {
+    background: #682773;
+    box-shadow: none;
+  }
 
-.profile-button:focus {
-  background: #682773;
-  box-shadow: none;
-}
+  .profile-button:active {
+    background: #682773;
+    box-shadow: none;
+  }
 
-.profile-button:active {
-  background: #682773;
-  box-shadow: none;
-}
-
-.back:hover {
-  color: #682773;
-  cursor: pointer;
-}
+  .back:hover {
+    color: #682773;
+    cursor: pointer;
+  }
 </style>
 
 <div class="container rounded bg-white mt-5">
   <div class="row">
-      <div class="col-md-4 border-right">
-          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="130"></div>
-      </div>
-      <div class="col-md-8">
-        <h4>
-          {% if messages %}
-            {% for message in messages %}
-              {{ message }}
-            {% endfor %}
-          {% endif %}
-        </h4>
-          <div class="p-3 py-5">
-            <form action="" method="post">
-              {% csrf_token %}  
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                      <h6>My Profile</h6>
-                  </div>
-              </div>
-              <div class="row mt-2">
-                <div class="col-md-6"><input type="text" class="form-control" placeholder="Edit Your Name" name="cname" value="{{ profiledata.rname }}"></div>
-                  <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Age" name="usage" required></div>
-              </div>
-              <div class="row mt-3">
-                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Email"  name="cemail" value="{{ profiledata.remail }}" disabled></div>
-                  <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Phone Number" name="usmobile" required></div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-md-6">
-                  <!-- <select name="" id="" class="form-control">
+    <div class="col-md-4 border-right">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="130"></div>
+    </div>
+    <div class="col-md-8">
+      <h4>
+        {% if messages %}
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        {% endif %}
+      </h4>
+      <div class="p-3 py-5">
+        <form action="" method="post">
+          {% csrf_token %}
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
+              <h6>My Profile</h6>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-6"><input type="text" class="form-control" placeholder="Edit Your Name" name="uname"
+                value="{{ profiledata.rname }}" disabled></div>
+            <div class="col-md-6"><input type="text" maxlength="3" class="form-control" value="{{ profiledata.rage}}"
+                placeholder="Age" name="usage" required></div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" name="uemail"
+                value="{{ profiledata.remail }}" disabled></div>
+            <div class="col-md-6"><input type="text" maxlength="10" class="form-control"
+                value="{{ profiledata.rnumber}}" placeholder="Phone Number" name="usmobile" required></div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <!-- <select name="" id="" class="form-control">
                       <option value="">Select Your Disease</option>
                       <option value="">Ashtma</option>
                       <option value="">Anemia</option>
@@ -98,14 +101,17 @@
                       <option value="">Tobacco Habit</option>
                       <option value="">Weakness</option>
                     </select> -->
-                  </div>
-                </div>
-                <div class="mt-5 text-right"><button class="button btn btn-outline-primary" type="submit">Save Profile</button></div>
-              </div>
-            </form>
+            </div>
+          </div>
+          <div class="mt-5 text-right"><button class="button btn btn-outline-primary" type="submit">Save
+              Profile</button></div>
       </div>
+      </form>
+    </div>
   </div>
 </div>
+
+
 
 
 {% endblock content %}
